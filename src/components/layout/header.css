@@ -1,22 +1,17 @@
 
-.normal {
-  max-height: 64px;
-  overflow: hidden;
+.mainWrap {
+  min-width: 600px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.logo {
-  display: block;
-  width: 120px;
-  float: left;
-  text-align: center;
-}
+.leftWrap {}
+.rightWrap {}
 
-.logo > a {
-  display: block;
-  font-size: 24px;
-}
-
-.menu {
-  line-height: 64px;
-  background-color: transparent;
+.logoWrap {
+  margin-right: 16px;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: 32px;
 }

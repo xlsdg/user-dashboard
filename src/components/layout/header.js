@@ -1,38 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Menu, Icon
+  Input
 } from 'antd';
-import {
-  Link
-} from 'dva/router';
 
 import styles from './header.css';
+
+const Search = Input.Search;
 
 function Header({
   location
 }) {
+  const style = {
+    search: {
+      width: '276px',
+      'vertical-align': 'top'
+    }
+  };
+
   return (
-    <header className={styles.normal}>
-      <div className={styles.logo}>
-        <Link to="/">Starter</Link>
+    <header className={`fn-clear ${styles.mainWrap}`}>
+      <div className={`fn-left ${styles.leftWrap}`}>
+        <span className={styles.logoWrap}>BBS</span>
+        <Search
+          style={style.search}
+          onSearch={value => console.log(value)}
+        />
       </div>
-      <Menu
-        className={styles.menu}
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={[location.pathname]}
-      >
-        <Menu.Item key="/page01">
-          <Link to="/page01"><Icon type="home" />page01</Link>
-        </Menu.Item>
-        <Menu.Item key="/page02">
-          <Link to="/page02"><Icon type="home" />page02</Link>
-        </Menu.Item>
-        <Menu.Item key="/page03">
-          <Link to="/page03"><Icon type="home" />page03</Link>
-        </Menu.Item>
-      </Menu>
+      <div className={`fn-right ${styles.rightWrap}`}>
+        reg
+      </div>
     </header>
   );
 }

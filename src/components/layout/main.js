@@ -4,8 +4,8 @@ import {
   Layout, BackTop
 } from 'antd';
 
-// import Header from './header';
-// import Footer from './footer';
+import IHeader from './header.js';
+import IFooter from './footer.js';
 
 import styles from './main.css';
 
@@ -19,14 +19,16 @@ function Main({
   return (
     <Layout className={styles.mainWrap}>
       <Header className={styles.headerWrap}>
-        Header
+        <IHeader location={location} />
       </Header>
       <Content className={styles.contentWrap}>
-        {children}
+        <div className={`fn-clear ${styles.bodyWrap}`}>
+          {children}
+        </div>
         <BackTop />
       </Content>
       <Footer className={styles.footerWrap}>
-        Footer
+        <IFooter />
       </Footer>
     </Layout>
   );
