@@ -1,27 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Layout, BackTop} from 'antd';
+import {
+  Layout, BackTop
+} from 'antd';
 
-import Header from './header';
-import Footer from './footer';
+// import Header from './header';
+// import Footer from './footer';
 
 import styles from './main.css';
 
-function Main({children, location}) {
+const {
+  Header, Content, Footer
+} = Layout;
+
+function Main({
+  children, location
+}) {
   return (
-    <Layout className={styles.normal}>
-      <Layout.Header className={styles.header}>
-        <Header location={location} />
-      </Layout.Header>
-      <Layout.Content className={styles.content}>
-        <div className={styles.container}>
-          {children}
-        </div>
+    <Layout className={styles.mainWrap}>
+      <Header className={styles.headerWrap}>
+        Header
+      </Header>
+      <Content className={styles.contentWrap}>
+        {children}
         <BackTop />
-      </Layout.Content>
-      <Layout.Footer className={styles.footer}>
-        <Footer />
-      </Layout.Footer>
+      </Content>
+      <Footer className={styles.footerWrap}>
+        Footer
+      </Footer>
     </Layout>
   );
 }

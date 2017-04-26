@@ -11,6 +11,8 @@
     "babel-polyfill": "^6.23.0",
     "dva": "^1.2.1",
     "flex.css": "^1.1.6",
+    "leancloud-realtime": "^3.4.1",
+    "leancloud-storage": "^2.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "numeral": "^2.0.6",
