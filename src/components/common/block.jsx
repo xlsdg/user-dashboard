@@ -53,7 +53,10 @@ Block.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]).isRequired,
   style: PropTypes.object,
   bodyStyle: PropTypes.object
 };
