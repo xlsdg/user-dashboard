@@ -11,11 +11,13 @@ import Cfg from '../config.js';
 
 import Body from '../components/layout/body.jsx';
 
-import Post from '../components/content/post.jsx';
-import Nav from '../components/content/nav.jsx';
+import PostList from '../components/content/post_list.jsx';
+import TagNav from '../components/content/tag_nav.jsx';
 
-import Join from '../components/sider/join.jsx';
-import Hot from '../components/sider/hot.jsx';
+import UserJoin from '../components/sider/user_join.jsx';
+import HotPost from '../components/sider/hot_post.jsx';
+import HotTag from '../components/sider/hot_tag.jsx';
+import NewTag from '../components/sider/new_tag.jsx';
 import Status from '../components/sider/status.jsx';
 
 import styles from './index.less';
@@ -26,8 +28,8 @@ function Index({
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        <Post />
-        <Nav />
+        <PostList />
+        <TagNav />
       </div>
     );
   }
@@ -35,8 +37,10 @@ function Index({
   function renderSider() {
     return (
       <div className={styles.siderWrap}>
-        <Join />
-        <Hot />
+        <UserJoin />
+        <HotPost />
+        <HotTag />
+        <NewTag />
         <Status />
       </div>
     );

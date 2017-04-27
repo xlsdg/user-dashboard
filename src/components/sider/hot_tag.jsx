@@ -3,9 +3,9 @@ import React from 'react';
 
 import Block from '../common/block.jsx';
 
-import styles from './status.less';
+import styles from './hot_tag.less';
 
-function Status() {
+function HotTag() {
   function renderHeader() {
     return (
       <div
@@ -30,7 +30,7 @@ function Status() {
   );
 }
 
-// Status.propTypes = {
+// HotTag.propTypes = {
 // };
 
-export default Status;
+export default HotTag;

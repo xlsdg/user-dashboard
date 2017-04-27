@@ -3,9 +3,9 @@ import React from 'react';
 
 import Block from '../common/block.jsx';
 
-import styles from './status.less';
+import styles from './post_list.less';
 
-function Status() {
+function PostList() {
   function renderHeader() {
     return (
       <div
@@ -30,7 +30,7 @@ function Status() {
   );
 }
 
-// Status.propTypes = {
+// PostList.propTypes = {
 // };
 
-export default Status;
+export default PostList;

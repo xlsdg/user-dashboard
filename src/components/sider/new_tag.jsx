@@ -3,9 +3,9 @@ import React from 'react';
 
 import Block from '../common/block.jsx';
 
-import styles from './status.less';
+import styles from './new_tag.less';
 
-function Status() {
+function NewTag() {
   function renderHeader() {
     return (
       <div
@@ -14,23 +14,14 @@ function Status() {
     );
   }
 
-  function renderFooter() {
-    return (
-      <div
-        className={styles.footerWrap}
-      >789</div>
-    );
-  }
-
   return (
     <Block
       header={renderHeader()}
-      footer={renderFooter()}
     >456</Block>
   );
 }
 
-// Status.propTypes = {
+// NewTag.propTypes = {
 // };
 
-export default Status;
+export default NewTag;
