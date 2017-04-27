@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  Helmet
+} from 'react-helmet';
+import {
   connect
 } from 'dva';
 import {
   Card
 } from 'antd';
 
+import Cfg from '../config.js';
 import Body from '../components/layout/body.jsx';
 
 import styles from './index.less';
@@ -113,10 +117,17 @@ function Index({
   }
 
   return (
-    <Body
-      content={renderContent()}
-      sider={renderSider()}
-    />
+    <div className={styles.mainWrap}>
+      <Helmet>
+        <title>{Cfg.name}</title>
+        <meta name="keywords" content={Cfg.keywords} />
+        <meta name="description" content={Cfg.description} />
+      </Helmet>
+      <Body
+        content={renderContent()}
+        sider={renderSider()}
+      />
+    </div>
   );
 }
 
