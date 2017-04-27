@@ -6,112 +6,38 @@ import {
 import {
   connect
 } from 'dva';
-import {
-  Card
-} from 'antd';
 
 import Cfg from '../config.js';
+
 import Body from '../components/layout/body.jsx';
+
+import Post from '../components/content/post.jsx';
+import Nav from '../components/content/nav.jsx';
+
+import Join from '../components/sider/join.jsx';
+import Hot from '../components/sider/hot.jsx';
+import Status from '../components/sider/status.jsx';
 
 import styles from './index.less';
 
 function Index({
   location
 }) {
-  const bodyStyle = {
-    padding: 0
-  };
-
-  function renderTopContent() {
-    const style = {
-      width: '100%',
-      height: 512
-    };
-
-    return (
-      <Card
-        bordered={false}
-        style={style}
-        bodyStyle={bodyStyle}
-      >123</Card>
-    );
-  }
-
-  function renderBottomContent() {
-    const style = {
-      width: '100%',
-      height: 256
-    };
-
-    return (
-      <Card
-        bordered={false}
-        style={style}
-        bodyStyle={bodyStyle}
-      >456</Card>
-    );
-  }
-
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        {renderTopContent()}
-        {renderBottomContent()}
+        <Post />
+        <Nav />
       </div>
-    );
-  }
-
-  function renderLogin() {
-    const style = {
-      width: '100%',
-      height: 100
-    };
-
-    return (
-      <Card
-        bordered={false}
-        style={style}
-        bodyStyle={bodyStyle}
-      >234</Card>
-    );
-  }
-
-  function renderHot() {
-    const style = {
-      width: '100%',
-      height: 200
-    };
-
-    return (
-      <Card
-        bordered={false}
-        style={style}
-        bodyStyle={bodyStyle}
-      >234</Card>
-    );
-  }
-
-  function renderStatus() {
-    const style = {
-      width: '100%',
-      height: 300
-    };
-
-    return (
-      <Card
-        bordered={false}
-        style={style}
-        bodyStyle={bodyStyle}
-      >234</Card>
     );
   }
 
   function renderSider() {
     return (
       <div className={styles.siderWrap}>
-        {renderLogin()}
-        {renderHot()}
-        {renderStatus()}
+        <Join />
+        <Hot />
+        <Status />
       </div>
     );
   }
