@@ -1,4 +1,5 @@
 import qs from 'qs';
+import _ from 'lodash';
 import Axios from 'axios';
 import {
   message
@@ -83,14 +84,16 @@ function procRequest(req) {
     .catch(procReqError);
 }
 
-export function DelJson(url, data = {}) {
-  data._t_ = getTimeStamp();
-  return procRequest(del(url, data));
+export function DelJson(url, data) {
+  const _data = data ? _.cloneDeep(data) : {};
+  _data._t_ = getTimeStamp();
+  return procRequest(del(url, _data));
 }
 
-export function GetJson(url, data = {}) {
-  data._t_ = getTimeStamp();
-  return procRequest(get(url, data));
+export function GetJson(url, data) {
+  const _data = data ? _.cloneDeep(data) : {};
+  _data._t_ = getTimeStamp();
+  return procRequest(get(url, _data));
 }
 
 export function PostJson(url, data) {

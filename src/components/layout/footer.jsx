@@ -1,7 +1,10 @@
 import React from 'react';
+import Moment from 'moment';
 import {
   Link
 } from 'dva/router';
+
+import Cfg from '../../config.js';
 
 import styles from './footer.less';
 
@@ -77,10 +80,16 @@ function Footer() {
   }
 
   function renderVer() {
+    const time = +Moment() - window._start_time_stamp;
+    const utc = Moment().utcOffset(0).format('HH:mm');
+    const pvg = Moment().utcOffset(8).format('HH:mm');
+    const lax = Moment().utcOffset(-7).format('HH:mm');
+    const jfk = Moment().utcOffset(-4).format('HH:mm');
+
     return (
       <p
         className={styles.verWrap}
-      >VERSION: 3.9.7.5 · 26ms · UTC 01:12 · PVG 09:12 · LAX 18:12 · JFK 21:12</p>
+      >{`VERSION: ${Cfg.version} · ${time}ms · UTC ${utc} · PVG ${pvg} · LAX ${lax} · JFK ${jfk}`}</p>
     );
   }
 
@@ -99,7 +108,7 @@ function Footer() {
           href="//www.miibeian.gov.cn/"
           target="_blank"
           rel="noopener noreferrer nofollow"
-        >沪ICP备12345678号-1</a>
+        >{Cfg.icp}</a>
       </p>
     );
   }
