@@ -4,9 +4,9 @@ import {
   Router, Route
 } from 'dva/router';
 
-import Main from './components/layout/main.js';
+import Main from './components/layout/main.jsx';
 
-import Index from './routes/index.js';
+import Index from './routes/index.jsx';
 
 function RouterConfig({history}) {
   return (

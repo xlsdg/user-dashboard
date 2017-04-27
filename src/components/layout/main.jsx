@@ -4,10 +4,10 @@ import {
   Layout, BackTop
 } from 'antd';
 
-import IHeader from './header.js';
-import IFooter from './footer.js';
+import IHeader from './header.jsx';
+import IFooter from './footer.jsx';
 
-import styles from './main.css';
+import styles from './main.less';
 
 const {
   Header, Content, Footer
