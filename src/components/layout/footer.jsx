@@ -80,11 +80,16 @@ function Footer() {
   }
 
   function renderVer() {
-    const time = +Moment() - window._start_time_stamp;
     const utc = Moment().utcOffset(0).format('HH:mm');
     const pvg = Moment().utcOffset(8).format('HH:mm');
     const lax = Moment().utcOffset(-7).format('HH:mm');
     const jfk = Moment().utcOffset(-4).format('HH:mm');
+
+    if (!window._end_time_stamp) {
+      window._end_time_stamp = (new Date()).getTime();
+    }
+
+    const time = window._end_time_stamp - window._start_time_stamp;
 
     return (
       <p
