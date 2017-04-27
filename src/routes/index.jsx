@@ -14,12 +14,15 @@ import styles from './index.less';
 function Index({
   location
 }) {
+  const bodyStyle = {
+    padding: 0
+  };
+
   function renderTopContent() {
     const style = {
       width: '100%',
       height: 512
     };
-    const bodyStyle = {};
 
     return (
       <Card
@@ -35,7 +38,6 @@ function Index({
       width: '100%',
       height: 256
     };
-    const bodyStyle = {};
 
     return (
       <Card
@@ -60,7 +62,6 @@ function Index({
       width: '100%',
       height: 100
     };
-    const bodyStyle = {};
 
     return (
       <Card
@@ -76,7 +77,6 @@ function Index({
       width: '100%',
       height: 200
     };
-    const bodyStyle = {};
 
     return (
       <Card
@@ -92,7 +92,6 @@ function Index({
       width: '100%',
       height: 300
     };
-    const bodyStyle = {};
 
     return (
       <Card

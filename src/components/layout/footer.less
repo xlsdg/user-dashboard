@@ -4,6 +4,12 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 10px;
+  a {
+    color: #778087;
+    &:hover {
+      color: #4d5256;
+    }
+  }
 }
 
 .leftWrap {
@@ -12,6 +18,30 @@
 
 .rightWrap {
   text-align: right;
+}
+
+.liWrap {
+  float: left;
+  position: relative;
+  font-weight: bold;
+}
+
+.liWrap + .liWrap {
+  margin-left: 25px;
+  &:before {
+    content: '·';
+    position: absolute;
+    left: -15px;
+    color: #e2e2e2;
+  }
+}
+
+.onlineWrap {
+  margin-right: 10px;
+}
+
+.topWrap {
+  color: #ccc;
 }
 
 .cnWrap {
@@ -33,10 +63,4 @@
 
 .icpWrap {
   margin-top: 20px;
-  a {
-    color: #778087;
-    &:hover {
-      color: #4d5256;
-    }
-  }
 }

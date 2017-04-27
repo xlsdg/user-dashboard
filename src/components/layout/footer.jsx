@@ -1,33 +1,118 @@
 import React from 'react';
-// import {
-//   Link
-// } from 'dva/router';
+import {
+  Link
+} from 'dva/router';
 
 import styles from './footer.less';
 
 function Footer() {
+  function renderLink() {
+    const online = 1;
+    const top = 2;
+
+    return (
+      <ul className={`fn-clear ${styles.listWrap}`}>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >关于</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >FAQ</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >API</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >我们的愿景</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >广告投放</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <Link
+            className={styles.linkWrap}
+            to="/"
+          >鸣谢</Link>
+        </li>
+        <li className={styles.liWrap}>
+          <span
+            className={styles.onlineWrap}
+          >{online} 人在线</span>
+          <span
+            className={styles.topWrap}
+          >最高记录 {top}</span>
+        </li>
+      </ul>
+    );
+  }
+
+  function renderCnInfo() {
+    return (
+      <p
+        className={styles.cnWrap}
+      >创意工作者们的社区</p>
+    );
+  }
+
+  function renderEnInfo() {
+    return (
+      <p
+        className={styles.enWrap}
+      >World is powered by solitude</p>
+    );
+  }
+
+  function renderVer() {
+    return (
+      <p
+        className={styles.verWrap}
+      >VERSION: 3.9.7.5 · 26ms · UTC 01:12 · PVG 09:12 · LAX 18:12 · JFK 21:12</p>
+    );
+  }
+
+  function renderLove() {
+    return (
+      <p
+        className={styles.loveWrap}
+      >♥ Do have faith in what you are doing.</p>
+    );
+  }
+
+  function renderIcp() {
+    return (
+      <p className={styles.icpWrap}>
+        <a
+          href="//www.miibeian.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >沪ICP备12345678号-1</a>
+      </p>
+    );
+  }
+
   function renderLeft() {
     return (
       <div className={`fn-left ${styles.leftWrap}`}>
-        <p
-          className={styles.cnWrap}
-        >创意工作者们的社区</p>
-        <p
-          className={styles.enWrap}
-        >World is powered by solitude</p>
-        <p
-          className={styles.verWrap}
-        >VERSION: 3.9.7.5 · 26ms · UTC 01:12 · PVG 09:12 · LAX 18:12 · JFK 21:12</p>
-        <p
-          className={styles.loveWrap}
-        >♥ Do have faith in what you are doing.</p>
-        <p className={styles.icpWrap}>
-          <a
-            href="//www.miibeian.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >沪ICP备12345678号-1</a>
-        </p>
+        {renderLink()}
+        {renderCnInfo()}
+        {renderEnInfo()}
+        {renderVer()}
+        {renderLove()}
+        {renderIcp()}
       </div>
     );
   }
