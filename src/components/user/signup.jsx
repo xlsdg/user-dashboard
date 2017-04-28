@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
               required: true, message: '请输入用户名!', whitespace: true
             }]
           })(
-            <Input placeholder="用户名或电子邮箱地址" />
+            <Input placeholder="请使用半角的 a-z 或数字 0-9" />
           )}
         </FormItem>
       );
