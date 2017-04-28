@@ -33,6 +33,12 @@ function UserForgot({
     );
   }
 
+  function renderInfo() {
+    return (
+      <div className={styles.infoWrap} />
+    );
+  }
+
   function renderForm() {
     return (
       <div className={styles.formWrap}>
@@ -44,6 +50,7 @@ function UserForgot({
   function renderBody() {
     return (
       <div className={styles.bodyWrap}>
+        {renderInfo()}
         {renderForm()}
       </div>
     );

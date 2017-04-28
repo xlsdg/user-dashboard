@@ -30,6 +30,12 @@ function UserSignup({
     );
   }
 
+  function renderInfo() {
+    return (
+      <div className={styles.infoWrap} />
+    );
+  }
+
   function renderForm() {
     return (
       <div className={styles.formWrap}>
@@ -41,6 +47,7 @@ function UserSignup({
   function renderBody() {
     return (
       <div className={styles.bodyWrap}>
+        {renderInfo()}
         {renderForm()}
       </div>
     );
