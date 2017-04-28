@@ -20,7 +20,7 @@ function UserSignin({
     return (
       <Breadcrumb
         className={styles.headerWrap}
-        separator=">"
+        separator="›"
       >
         <Breadcrumb.Item>
           <Link to="/">首页</Link>

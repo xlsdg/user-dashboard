@@ -1,11 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Block from '../common/block.jsx';
 
 import styles from './user_forgot.less';
 
-function UserForgot() {
+function UserForgot({
+  onForgot
+}) {
   function renderHeader() {
     return (
       <div
@@ -21,7 +23,11 @@ function UserForgot() {
   );
 }
 
-// UserForgot.propTypes = {
-// };
+UserForgot.propTypes = {
+  onForgot: PropTypes.func.isRequired
+};
+
+UserForgot.defaultProps = {
+};
 
 export default UserForgot;

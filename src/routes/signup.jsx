@@ -20,10 +20,14 @@ import styles from './signup.less';
 function Signup({
   location
 }) {
+  function onSignup(values) {
+    console.log(values);
+  }
+
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        <ContentUserSignup />
+        <ContentUserSignup onSignup={onSignup} />
       </div>
     );
   }

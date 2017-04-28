@@ -20,10 +20,14 @@ import styles from './forgot.less';
 function Forgot({
   location
 }) {
+  function onForgot(values) {
+    console.log(values);
+  }
+
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        <UserForgot />
+        <UserForgot onForgot={onForgot} />
       </div>
     );
   }

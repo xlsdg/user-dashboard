@@ -1,28 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Link
-} from 'dva/router';
-import {
   Form, Input, Button
 } from 'antd';
 
-import styles from './signin.less';
+import styles from './signup.less';
 
 const FormItem = Form.Item;
 
-class SigninForm extends React.Component {
+class SignupForm extends React.Component {
   onSubmit = (evt) => {
     const that = this;
     // const {
     // } = that.state;
     const {
-      form, onSignin
+      form, onSignup
     } = that.props;
     evt.preventDefault();
     form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        onSignin(values);
+        onSignup(values);
       }
     });
   }
@@ -61,8 +58,6 @@ class SigninForm extends React.Component {
         >
           {getFieldDecorator('username', {
             rules: [{
-              type: 'string', message: '请输入合法的用户名!'
-            }, {
               required: true, message: '请输入用户名!', whitespace: true
             }]
           })(
@@ -90,11 +85,30 @@ class SigninForm extends React.Component {
       );
     }
 
+    function renderEmail() {
+      return (
+        <FormItem
+          {...formItemLayout}
+          label="电子邮件"
+          hasFeedback
+        >
+          {getFieldDecorator('email', {
+            rules: [{
+              type: 'email', message: '请输入合法的邮箱地址!'
+            }, {
+              required: true, message: '请输入邮箱地址!', whitespace: true
+            }]
+          })(
+            <Input placeholder="请使用真实电子邮箱注册" />
+          )}
+        </FormItem>
+      );
+    }
+
     function renderSubmit() {
       return (
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" size="large">登录</Button>
-          <Link className={styles.forgotWrap} to="/forgot">我忘记密码了</Link>
+          <Button type="primary" htmlType="submit" size="large">注册</Button>
         </FormItem>
       );
     }
@@ -106,17 +120,18 @@ class SigninForm extends React.Component {
       >
         {renderUserName()}
         {renderPassword()}
+        {renderEmail()}
         {renderSubmit()}
       </Form>
     );
   }
 }
 
-SigninForm.propTypes = {
-  onSignin: PropTypes.func.isRequired
+SignupForm.propTypes = {
+  onSignup: PropTypes.func.isRequired
 };
 
-SigninForm.defaultProps = {
+SignupForm.defaultProps = {
 };
 
-export default Form.create()(SigninForm);
+export default Form.create()(SignupForm);
