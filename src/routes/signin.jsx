@@ -20,10 +20,14 @@ import styles from './signin.less';
 function Signin({
   location
 }) {
+  function onSignin(values) {
+    console.log(values);
+  }
+
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        <ContentUserSignin />
+        <ContentUserSignin onSignin={onSignin} />
       </div>
     );
   }

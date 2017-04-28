@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   Link
 } from 'dva/router';
@@ -9,9 +9,13 @@ import {
 
 import Block from '../common/block.jsx';
 
+import SigninForm from '../user/signin.jsx';
+
 import styles from './user_signin.less';
 
-function UserSignin() {
+function UserSignin({
+  onSignin
+}) {
   function renderHeader() {
     return (
       <Breadcrumb
@@ -28,11 +32,21 @@ function UserSignin() {
 
   function renderInfo() {
     return (
-      <Alert
-        message="你要查看的页面需要先登录"
-        type="info"
-        closable
-      />
+      <div className={styles.infoWrap}>
+        <Alert
+          message="你要查看的页面需要先登录"
+          type="info"
+          closable
+        />
+      </div>
+    );
+  }
+
+  function renderForm() {
+    return (
+      <div className={styles.formWrap}>
+        <SigninForm onSignin={onSignin} />
+      </div>
     );
   }
 
@@ -40,6 +54,7 @@ function UserSignin() {
     return (
       <div className={styles.bodyWrap}>
         {renderInfo()}
+        {renderForm()}
       </div>
     );
   }
@@ -51,7 +66,11 @@ function UserSignin() {
   );
 }
 
-// UserSignin.propTypes = {
-// };
+UserSignin.propTypes = {
+  onSignin: PropTypes.func.isRequired
+};
+
+UserSignin.defaultProps = {
+};
 
 export default UserSignin;
