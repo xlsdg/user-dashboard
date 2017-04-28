@@ -11,25 +11,19 @@ import Cfg from '../config.js';
 
 import Body from '../components/layout/body.jsx';
 
-import PostList from '../components/content/post_list.jsx';
-import TagNav from '../components/content/tag_nav.jsx';
+import UserForgot from '../components/content/user_forgot.jsx';
 
 import UserSignin from '../components/sider/user_signin.jsx';
-import HotPost from '../components/sider/hot_post.jsx';
-import HotTag from '../components/sider/hot_tag.jsx';
-import NewTag from '../components/sider/new_tag.jsx';
-import Status from '../components/sider/status.jsx';
 
-import styles from './index.less';
+import styles from './forgot.less';
 
-function Index({
+function Forgot({
   location
 }) {
   function renderContent() {
     return (
       <div className={styles.contentWrap}>
-        <PostList />
-        <TagNav />
+        <UserForgot />
       </div>
     );
   }
@@ -38,10 +32,6 @@ function Index({
     return (
       <div className={styles.siderWrap}>
         <UserSignin />
-        <HotPost />
-        <HotTag />
-        <NewTag />
-        <Status />
       </div>
     );
   }
@@ -49,7 +39,7 @@ function Index({
   return (
     <div className={styles.mainWrap}>
       <Helmet>
-        <title>{Cfg.name}</title>
+        <title>{`${Cfg.name} › 重设密码`}</title>
         <meta name="keywords" content={Cfg.keywords} />
         <meta name="description" content={Cfg.description} />
       </Helmet>
@@ -61,7 +51,7 @@ function Index({
   );
 }
 
-Index.propTypes = {
+Forgot.propTypes = {
   location: PropTypes.object.isRequired
 };
 
@@ -69,4 +59,4 @@ function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps)(Index);
+export default connect(mapStateToProps)(Forgot);

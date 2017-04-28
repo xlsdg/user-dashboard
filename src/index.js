@@ -1,6 +1,7 @@
 import dva from 'dva';
 // import Loading from 'dva-loading';
 
+import './utils/leancloud.js';
 import './index.less';
 
 // 1. Initialize

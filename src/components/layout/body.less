@@ -11,3 +11,10 @@
   width: 270px;
   margin-left: -270px;
 }
+
+.leftWrap > div,
+.rightWrap > div {
+  & > div + div {
+    margin-top: 20px;
+  }
+}

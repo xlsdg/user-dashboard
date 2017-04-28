@@ -9,9 +9,9 @@ import {
 
 import Block from '../common/block.jsx';
 
-import styles from './user_join.less';
+import styles from './user_signin.less';
 
-function UserJoin() {
+function UserSignin() {
   function renderHeader() {
     return (
       <div
@@ -35,17 +35,17 @@ function UserJoin() {
         <p className={styles.infoWrap}>
           <Button
             type="primary"
-          >现在注册</Button>
+          ><Link to="/signup">现在注册</Link></Button>
         </p>
         <p
           className={styles.infoWrap}
-        >已注册用户请 <Link to="/">登录</Link></p>
+        >已注册用户请 <Link to="/signin">登录</Link></p>
       </div>
     </Block>
   );
 }
 
-// UserJoin.propTypes = {
+// UserSignin.propTypes = {
 // };
 
-export default UserJoin;
+export default UserSignin;

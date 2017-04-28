@@ -41,11 +41,11 @@ function Header({
       <div className={`fn-right ${styles.rightWrap}`}>
         <Link
           className={styles.btnWrap}
-          to="/"
+          to="/signup"
         >注册</Link>
         <Link
           className={styles.btnWrap}
-          to="/"
+          to="/signin"
         >登录</Link>
       </div>
     );
