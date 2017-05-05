@@ -20,6 +20,7 @@ class SignupForm extends React.Component {
     form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         onSignup(values);
+        form.resetFields();
       }
     });
   }

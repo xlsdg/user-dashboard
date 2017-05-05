@@ -23,6 +23,7 @@ class SigninForm extends React.Component {
     form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         onSignin(values);
+        form.resetFields();
       }
     });
   }

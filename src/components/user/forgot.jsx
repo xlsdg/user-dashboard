@@ -20,6 +20,7 @@ class ForgotForm extends React.Component {
     form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         onForgot(values);
+        form.resetFields();
       }
     });
   }
