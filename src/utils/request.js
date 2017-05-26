@@ -7,7 +7,7 @@ import {
 
 import {
   getTimeStamp
-} from '../utils/time';
+} from './time.js';
 
 const reqConfig = {
   withCredentials: true
