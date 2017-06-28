@@ -1,6 +1,7 @@
 export default {
   entry: 'src/index.js',
-  publicPath: '/user-dashboard/',
+  multipage: true,
+  publicPath: '/',
   disableCSSModules: false,
   autoprefixer: {
     browsers: [
@@ -17,9 +18,7 @@ export default {
   ],
   env: {
     production: {
-      define: {
-        __CDN__: ''
-      }
+      publicPath: '/user-dashboard/'
     },
     development: {
       extraBabelPlugins: [
