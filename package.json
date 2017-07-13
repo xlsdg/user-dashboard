@@ -12,7 +12,7 @@
     "dva": "^1.2.1",
     "flex.css": "^1.1.7",
     "leancloud-realtime": "^3.5.2",
-    "leancloud-storage": "^3.0.1",
+    "leancloud-storage": "^3.0.2",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "numeral": "^2.0.6",
