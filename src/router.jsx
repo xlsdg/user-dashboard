@@ -1,27 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Router, Route
+  Router, Switch, Route
 } from 'dva/router';
+import Dynamic from 'dva/dynamic';
 
-import Main from './components/layout/main.jsx';
 
 function RouterConfig({
-  history
+  history, app
 }) {
-  const Index = (loc, cb) => require.ensure([], require => cb(null, require('./routes/index.jsx')));
-  const Signup = (loc, cb) => require.ensure([], require => cb(null, require('./routes/signup.jsx')));
-  const Signin = (loc, cb) => require.ensure([], require => cb(null, require('./routes/signin.jsx')));
-  const Forgot = (loc, cb) => require.ensure([], require => cb(null, require('./routes/forgot.jsx')));
+  const Index = Dynamic({
+    app,
+    component: () => import('./routes/index')
+  });
+  const Signup = Dynamic({
+    app,
+    component: () => import('./routes/signup')
+  });
+  const Signin = Dynamic({
+    app,
+    component: () => import('./routes/signin')
+  });
+  const Forgot = Dynamic({
+    app,
+    component: () => import('./routes/forgot')
+  });
 
   return (
     <Router history={history}>
-      <Route component={Main}>
-        <Route path="/" getComponent={Index} />
-        <Route path="/signup" getComponent={Signup} />
-        <Route path="/signin" getComponent={Signin} />
-        <Route path="/forgot" getComponent={Forgot} />
-      </Route>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/signin" component={Signin} />
+        <Route exact path="/forgot" component={Forgot} />
+      </Switch>
     </Router>
   );
 }

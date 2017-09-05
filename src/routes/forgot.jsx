@@ -7,6 +7,8 @@ import {
   connect
 } from 'dva';
 
+import Main from '../components/layout/main.jsx';
+
 import Cfg from '../config.js';
 
 import Body from '../components/layout/body.jsx';
@@ -41,17 +43,19 @@ function Forgot({
   }
 
   return (
-    <div className={styles.mainWrap}>
-      <Helmet>
-        <title>{`${Cfg.name} › 重设密码`}</title>
-        <meta name="keywords" content={Cfg.keywords} />
-        <meta name="description" content={Cfg.description} />
-      </Helmet>
-      <Body
-        content={renderContent()}
-        sider={renderSider()}
-      />
-    </div>
+    <Main location={location}>
+      <div className={styles.mainWrap}>
+        <Helmet>
+          <title>{`${Cfg.name} › 重设密码`}</title>
+          <meta name="keywords" content={Cfg.keywords} />
+          <meta name="description" content={Cfg.description} />
+        </Helmet>
+        <Body
+          content={renderContent()}
+          sider={renderSider()}
+        />
+      </div>
+    </Main>
   );
 }
 
