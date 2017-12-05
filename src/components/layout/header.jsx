@@ -14,13 +14,6 @@ const Search = Input.Search;
 function Header({
   location
 }) {
-  const style = {
-    search: {
-      width: 276,
-      verticalAlign: 'top'
-    }
-  };
-
   function renderLeft() {
     return (
       <div className={`fn-left ${styles.leftWrap}`}>
@@ -29,7 +22,7 @@ function Header({
           to="/"
         >V2EX</Link>
         <Search
-          style={style.search}
+          className={styles.searchWrap}
           onSearch={value => console.log(value)}
         />
       </div>
